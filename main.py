@@ -49,12 +49,12 @@ def fert_recc(input_parameters: model_input):
     soil = input_dictionary['SoilType']
     crop = input_dictionary['CropType']
     n = input_dictionary['Nitrogen']
-    p = input_dictionary['Potassium']
-    k = input_dictionary['Phosphorous']
+    k = input_dictionary['Potassium']
+    p = input_dictionary['Phosphorous']
     
 
 
-    input_list = [[temp,hum,moist,soil,crop,n,p,k]]
+    input_list = [[temp,hum,moist,soil,crop,n,k,p]]
     transformed_input = processor.transform(input_list)
     prediction = recommendation_model.predict(transformed_input)
     
